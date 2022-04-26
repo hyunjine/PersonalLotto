@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:gom="http://schemas.android.com/tools">
+
+    <item
+        android:title="@string/market"
+        android:icon="@drawable/ic_location" />
+
+    <item
+        android:title="@string/data_list"
+        android:icon="@drawable/ic_data_list" />
+
+    <item
+        android:title=""
+        gom:showAsAction="never"/>
+
+    <item
+        android:title="@string/number_create"
+        android:icon="@drawable/ic_random" />
+
+    <item
+        android:title="@string/qr_check"
+        android:icon="@drawable/ic_qr_scanner" />
+</menu>

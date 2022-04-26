@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PersonalLotto">
         <activity
-            android:name=".view.activity.BaseActivity"
+            android:name=".view.activity.Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">PersonalLotto</string>
+    <string name="market">판매점</string>
+    <string name="data_list">통계</string>
+    <string name="home">홈</string>
+    <string name="number_create">번호 생성</string>
+    <string name="qr_check">QR 확인</string>
+
 </resources>
