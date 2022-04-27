@@ -11,8 +11,9 @@
         android:icon="@drawable/ic_data_list" />
 
     <item
-        android:title=""
-        gom:showAsAction="never"/>
+        android:id="@+id/mainFragment"
+        android:title="@string/home"
+        android:icon="@drawable/ic_home"/>
 
     <item
         android:title="@string/number_create"
