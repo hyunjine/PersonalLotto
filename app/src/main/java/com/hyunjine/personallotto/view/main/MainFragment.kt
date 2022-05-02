@@ -51,6 +51,7 @@ class MainFragment : Fragment() {
 
     private fun initView() {
         binding.viewModel = viewModel
+        viewModel.getCurrentLottoRound()
         viewModel.getLottoNumber()
     }
 
