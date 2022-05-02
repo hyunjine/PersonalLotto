@@ -1,4 +1,4 @@
-package com.hyunjine.personallotto.util
+package com.hyunjine.personallotto.util.constant
 
 const val TAG = "winter"
 

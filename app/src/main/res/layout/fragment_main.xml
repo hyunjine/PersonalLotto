@@ -2,7 +2,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="viewModel"
             type="com.hyunjine.personallotto.view.main.MainViewModel" />
@@ -14,14 +16,78 @@
         tools:context=".view.main.MainFragment">
 
         <TextView
-            android:id="@+id/txt"
+            android:id="@+id/txt_lotto_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.data.drwtNo2}"
+            android:background="@drawable/lotto_shape_blue"
+            android:gravity="center"
+            android:text="@{viewModel.data.drwtNo1}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/txt_lotto_2"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_lotto_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/lotto_shape_blue"
+            android:gravity="center"
+            android:text="@{viewModel.data.drwtNo2}"
+            app:layout_constraintBottom_toBottomOf="@id/txt_lotto_1"
+            app:layout_constraintEnd_toStartOf="@id/txt_lotto_3"
+            app:layout_constraintStart_toEndOf="@id/txt_lotto_1"
+            app:layout_constraintTop_toTopOf="@id/txt_lotto_1" />
+
+        <TextView
+            android:id="@+id/txt_lotto_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/lotto_shape_blue"
+            android:gravity="center"
+            android:text="@{viewModel.data.drwtNo3}"
+            app:layout_constraintBottom_toBottomOf="@id/txt_lotto_1"
+            app:layout_constraintEnd_toStartOf="@id/txt_lotto_4"
+            app:layout_constraintStart_toEndOf="@id/txt_lotto_2"
+            app:layout_constraintTop_toTopOf="@id/txt_lotto_1" />
+
+        <TextView
+            android:id="@+id/txt_lotto_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/lotto_shape_blue"
+            android:gravity="center"
+            android:text="@{viewModel.data.drwtNo4}"
+            app:layout_constraintBottom_toBottomOf="@id/txt_lotto_1"
+            app:layout_constraintEnd_toStartOf="@id/txt_lotto_5"
+            app:layout_constraintStart_toEndOf="@id/txt_lotto_3"
+            app:layout_constraintTop_toTopOf="@id/txt_lotto_1" />
+
+        <TextView
+            android:id="@+id/txt_lotto_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/lotto_shape_blue"
+            android:gravity="center"
+            android:text="@{viewModel.data.drwtNo5}"
+            app:layout_constraintBottom_toBottomOf="@id/txt_lotto_1"
+            app:layout_constraintEnd_toStartOf="@id/txt_lotto_6"
+            app:layout_constraintStart_toEndOf="@id/txt_lotto_4"
+            app:layout_constraintTop_toTopOf="@id/txt_lotto_1" />
+
+        <TextView
+            android:id="@+id/txt_lotto_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/lotto_shape_blue"
+            android:gravity="center"
+            android:text="@{viewModel.data.drwtNo6}"
+            app:layout_constraintBottom_toBottomOf="@id/txt_lotto_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txt_lotto_5"
+            app:layout_constraintTop_toTopOf="@id/txt_lotto_1" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

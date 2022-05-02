@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import com.hyunjine.personallotto.data.remote.LottoData
 import com.hyunjine.personallotto.data.repo.Repository
 import com.hyunjine.personallotto.util.base.BaseViewModel
+import com.hyunjine.personallotto.util.constant.TAG
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
@@ -22,6 +23,7 @@ class MainViewModel(private val repository: Repository): BaseViewModel() {
                 .subscribe(
                     {
                         _data.postValue(it)
+                        Log.d(TAG, "getLottoNumber: ${it.drwtNo1}")
                     },
                     {
 
