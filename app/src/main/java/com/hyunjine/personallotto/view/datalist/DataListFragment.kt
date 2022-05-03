@@ -1,4 +1,4 @@
-package com.hyunjine.personallotto.view.main
+package com.hyunjine.personallotto.view.datalist
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,18 +11,15 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.hyunjine.personallotto.R
 import com.hyunjine.personallotto.data.remote.LottoClient
-import com.hyunjine.personallotto.data.remote.LottoService
 import com.hyunjine.personallotto.data.repo.Repository
-import com.hyunjine.personallotto.databinding.FragmentMainBinding
-import com.hyunjine.personallotto.util.ViewModelFactory
-import com.hyunjine.personallotto.util.base.BaseFragment
+import com.hyunjine.personallotto.databinding.FragmentDataListBinding
 
-class MainFragment : Fragment() {
+class DataListFragment : Fragment() {
 
-    private var _binding: FragmentMainBinding? = null
+    private var _binding: FragmentDataListBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var viewModel: MainViewModel
+    private lateinit var viewModel: DataListViewModel
     private lateinit var navController : NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,11 +29,11 @@ class MainFragment : Fragment() {
 
     private fun setViewModel() {
         val repository = Repository(LottoClient().getClient())
-        viewModel = ViewModelProvider(this, ViewModelFactory(repository))[MainViewModel::class.java]
+        viewModel = ViewModelProvider(this)[DataListViewModel::class.java]
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container,false)
+        _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_data_list, container,false)
         binding.lifecycleOwner = viewLifecycleOwner
 
         return binding.root
@@ -51,7 +48,7 @@ class MainFragment : Fragment() {
 
     private fun initView() {
         binding.viewModel = viewModel
-        viewModel.getCurrentLottoRound()
+
     }
 
     override fun onDestroyView() {

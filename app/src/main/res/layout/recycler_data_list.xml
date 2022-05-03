@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.hyunjine.personallotto.data.remote.LottoData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txt_lotto_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/lotto_shape_blue"
+                    android:gravity="center"
+                    android:text="@{data.drwtNo1}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/txt_lotto_2"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.5" />
+
+                <TextView
+                    android:id="@+id/txt_lotto_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/lotto_shape_blue"
+                    android:gravity="center"
+                    android:text="@{data.drwtNo2}"
+                    app:layout_constraintBottom_toBottomOf="@id/txt_lotto_1"
+                    app:layout_constraintEnd_toStartOf="@id/txt_lotto_3"
+                    app:layout_constraintStart_toEndOf="@id/txt_lotto_1"
+                    app:layout_constraintTop_toTopOf="@id/txt_lotto_1" />
+
+                <TextView
+                    android:id="@+id/txt_lotto_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/lotto_shape_blue"
+                    android:gravity="center"
+                    android:text="@{data.drwtNo3}"
+                    app:layout_constraintBottom_toBottomOf="@id/txt_lotto_1"
+                    app:layout_constraintEnd_toStartOf="@id/txt_lotto_4"
+                    app:layout_constraintStart_toEndOf="@id/txt_lotto_2"
+                    app:layout_constraintTop_toTopOf="@id/txt_lotto_1" />
+
+                <TextView
+                    android:id="@+id/txt_lotto_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/lotto_shape_blue"
+                    android:gravity="center"
+                    android:text="@{data.drwtNo4}"
+                    app:layout_constraintBottom_toBottomOf="@id/txt_lotto_1"
+                    app:layout_constraintEnd_toStartOf="@id/txt_lotto_5"
+                    app:layout_constraintStart_toEndOf="@id/txt_lotto_3"
+                    app:layout_constraintTop_toTopOf="@id/txt_lotto_1" />
+
+                <TextView
+                    android:id="@+id/txt_lotto_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/lotto_shape_blue"
+                    android:gravity="center"
+                    android:text="@{data.drwtNo5}"
+                    app:layout_constraintBottom_toBottomOf="@id/txt_lotto_1"
+                    app:layout_constraintEnd_toStartOf="@id/txt_lotto_6"
+                    app:layout_constraintStart_toEndOf="@id/txt_lotto_4"
+                    app:layout_constraintTop_toTopOf="@id/txt_lotto_1" />
+
+                <TextView
+                    android:id="@+id/txt_lotto_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/lotto_shape_blue"
+                    android:gravity="center"
+                    android:text="@{data.drwtNo6}"
+                    app:layout_constraintBottom_toBottomOf="@id/txt_lotto_1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/txt_lotto_5"
+                    app:layout_constraintTop_toTopOf="@id/txt_lotto_1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

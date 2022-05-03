@@ -10,4 +10,8 @@
         android:name="com.hyunjine.personallotto.view.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/dataListFragment"
+        android:name="com.hyunjine.personallotto.view.datalist.DataListFragment"
+        android:label="DataListFragment" />
 </navigation>

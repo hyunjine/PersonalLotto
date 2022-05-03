@@ -3,6 +3,7 @@ package com.hyunjine.personallotto.view.main
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.hyunjine.personallotto.data.remote.LottoData
 import com.hyunjine.personallotto.data.repo.Repository
 import com.hyunjine.personallotto.util.base.BaseViewModel
@@ -29,28 +30,27 @@ class MainViewModel(private val repository: Repository) : BaseViewModel() {
         CoroutineScope(Dispatchers.IO).launch {
             runCatching {
                 val doc = Jsoup.connect("https://dhlottery.co.kr/common.do?method=main").get()
-                doc.select("#lottoDrwNo")
+                val result = doc.select("#lottoDrwNo").text().toString()
+                getLottoNumber(result.toInt())
+                result
             }.onSuccess {
-                _currentRound.postValue(it.text().plus("회"))
+                _currentRound.postValue(it.plus("회"))
             }.onFailure {
                 Log.d(TAG, "getCurrentLottoRound: fail")
             }
         }
     }
 
-    fun getLottoNumber() {
-        addDisposable(repository.getLottoNumber(1012)
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(
-                {
-                    _data.postValue(it)
-                },
-                {
-
-                }
-            )
-        )
+    private suspend fun getLottoNumber(currentRound: Int) {
+        CoroutineScope(Dispatchers.IO).launch {
+            runCatching {
+                repository.getLottoNumber(currentRound)
+            }.onSuccess {
+                Log.d(TAG, "getLottoNumber: $it")
+                _data.postValue(it)
+            }.onFailure {
+                Log.d(TAG, "getCurrentLottoRound: ${it.message}")
+            }
+        }
     }
-
 }
