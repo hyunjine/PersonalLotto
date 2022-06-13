@@ -20,8 +20,6 @@ abstract class BaseFragment<T : ViewDataBinding, R : BaseViewModel> : Fragment()
     /**
      * onCreate()
      */
-    protected open fun setClient() { }
-    protected open fun setRepository() { }
 
     protected lateinit var viewModel: R
     abstract fun setViewModel()
@@ -36,19 +34,15 @@ abstract class BaseFragment<T : ViewDataBinding, R : BaseViewModel> : Fragment()
     /**
      * onViewCreated()
      */
-    protected val isInit: AtomicBoolean = AtomicBoolean(true)
-    abstract fun viewInitialize()
+    abstract fun initView()
 
     /**
      * onResume()
      */
-    abstract fun viewEvent()
+    abstract fun onEvent()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        setClient()
-        setRepository()
         setViewModel()
     }
 
@@ -63,12 +57,8 @@ abstract class BaseFragment<T : ViewDataBinding, R : BaseViewModel> : Fragment()
         super.onViewCreated(view, savedInstanceState)
 
         navController = Navigation.findNavController(binding.root)
-        viewInitialize()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        viewEvent()
+        initView()
+        onEvent()
     }
 
     override fun onDestroyView() {

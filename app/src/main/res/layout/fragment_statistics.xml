@@ -7,14 +7,14 @@
 
         <variable
             name="viewModel"
-            type="com.hyunjine.personallotto.view.datalist.DataListViewModel" />
+            type="com.hyunjine.personallotto.view.statistics.StatisticsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/dataListFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.main.MainFragment">
+        tools:context=".view.home.HomeFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"

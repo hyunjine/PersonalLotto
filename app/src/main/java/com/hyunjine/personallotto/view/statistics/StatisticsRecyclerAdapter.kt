@@ -1,4 +1,4 @@
-package com.hyunjine.personallotto.view.datalist
+package com.hyunjine.personallotto.view.statistics
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.hyunjine.personallotto.data.remote.LottoData
 import com.hyunjine.personallotto.databinding.RecyclerDataListBinding
 
-class DataListRecyclerAdapter: RecyclerView.Adapter<DataListRecyclerAdapter.RecentViewHolder>() {
+class StatisticsRecyclerAdapter: RecyclerView.Adapter<StatisticsRecyclerAdapter.RecentViewHolder>() {
     interface OnItemClickListener {
         fun onItemClick(word: String, position: Int)
         fun onRemoveClick(position: Int)

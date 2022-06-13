@@ -7,12 +7,12 @@
         android:icon="@drawable/ic_location" />
 
     <item
-        android:id="@+id/dataListFragment"
+        android:id="@+id/statisticsFragment"
         android:title="@string/data_list"
-        android:icon="@drawable/ic_data_list" />
+        android:icon="@drawable/ic_statistics" />
 
     <item
-        android:id="@+id/mainFragment"
+        android:id="@+id/homeFragment"
         android:title="@string/home"
         android:icon="@drawable/ic_home"/>
 
